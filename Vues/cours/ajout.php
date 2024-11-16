@@ -54,23 +54,26 @@
         }
 
         input[type="text"],
-        input[type="number"],
-        input[type="datetime-local"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            color: #333;
-            font-size: 14px;
-        }
+input[type="number"],
+input[type="datetime-local"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+    box-sizing: border-box; /* Assure un calcul correct de la largeur */
+}
 
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        input[type="datetime-local"]:focus {
-            border-color: #0f6c94;
-            outline: none;
-        }
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+    border-color: #0f6c94;
+    outline: none;
+}
 
         /* Boutons d'action */
         input[type="submit"],
@@ -85,7 +88,7 @@
         }
 
         input[type="reset"] {
-            background-color: #f44336; /* Rouge */
+            background-color: #cccccc; /* Rouge */
             color: white;
         }
 
@@ -113,22 +116,42 @@
     </style>
 </head>
 <body>
+    <?php
+    require_once('../../Modeles/coursservice.php');
+    $courservice = new CoursService();
+    $enseignant = $courservice->getAllEnseignants();
+    $salle = $courservice->getSallesLibres();
+    ?>
     <a href="../../Controlleurs/CoursCtrl.php?action=liste" class="lien">Liste des cours</a><br>
     <h1>Formulaire d'ajout d'un cours</h1>
     <div class="form-container">
         <form action="../../Controlleurs/CoursCtrl.php" method="post">
-            <table align="center">
+            <table style="margin: 0 auto;">
                 <tr>
                     <td>Niveau</td>
                     <td><input type="text" name="niveau" autocomplete="off" required></td>
                 </tr>
                 <tr>
-                    <td>Enseignant (Identifiant)</td>
-                    <td><input type="number" name="idens" required></td>
+                <td>Enseignant</td>
+                    <td>
+                        <select name="idens" required>
+                            <option value="">Sélectionner un enseignant</option>
+                            <?php foreach ($enseignant as $ens): ?>
+                                <option value="<?= $ens['ide']; ?>"><?= $ens['nom']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Salle (Identifiant)</td>
-                    <td><input type="number" name="idsall" required></td>
+                    <td>Salle</td>
+                    <td>
+                        <select name="idsall" required>
+                            <option value="">Sélectionner une salle</option>
+                            <?php foreach ($salle as $s): ?>
+                                <option value="<?= $s['ids']; ?>"><?= $s['nom']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Matière</td>
@@ -136,14 +159,14 @@
                 </tr>
                 <tr>
                     <td>Horaire</td>
-                    <td><input type="datetime-local" name="horaire" required></td>
+                    <td><input type="date" name="horaire" required></td>
                 </tr>
                 <tr>
                     <td>Durée</td>
                     <td><input type="number" name="duree" required></td>
                 </tr>
                 <tr>
-                    <input type="hidden" name="action" value="modification">
+                    <input type="hidden" name="action" value="ajout">
                     <td colspan="2" style="text-align: center">
                         <input type="reset" value="Réinitialiser">
                         <input type="submit" value="Mettre à jour">

@@ -132,6 +132,8 @@
     require_once('../../Modeles/coursservice.php');
     $courservice = new CoursService();
     $cours = $courservice->getById($ids);
+    $enseignants = $courservice->getAllEnseignants();
+    $salles = $courservice->getSallesLibres();
     ?>
 
     <div class="form-container">

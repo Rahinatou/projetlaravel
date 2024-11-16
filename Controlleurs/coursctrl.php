@@ -1,10 +1,12 @@
 <?php
-require_once('../Modeles/CoursService.php');
+require_once('../Modeles/Coursservice.php');
 $coursService = new CoursService();
 
 $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : '');
 
 if ($action == 'form') {
+    $enseignants = $coursService->getAllEnseignants();
+    $salles = $coursService->getSallesLibres();
     header("Location: ../Vues/Cours/ajout.php");
 }
 
@@ -39,6 +41,8 @@ if ($action == 'ajout') {
 
         if ($action == 'editForm') {
             $id = $_GET['idc'];
+            $salles = $coursService->getSallesLibres();
+            $enseignants = $coursService->getAllEnseignants();
             header('Location: ../vues/cours/edit.php?idc=' . $id);
             exit;
             }

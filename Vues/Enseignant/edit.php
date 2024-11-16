@@ -126,11 +126,11 @@
             <table>
                 <tr>
                     <td>Identifiant :</td>
-                    <td><input type="text" name="ide" value="<?php echo $etudiant['ide']; ?>" autocomplete="off" required></td>
+                    <td><input type="text" name="ide" value="<?php echo $enseignant['ide']; ?>" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td>Nom :</td>
-                    <td><input type="text" name="nom" value="<?php echo $etudiant['nom']; ?>" autocomplete="off" required></td>
+                    <td><input type="text" name="nom" value="<?php echo $enseignant['nom']; ?>" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td>Téléphone :</td>

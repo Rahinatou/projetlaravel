@@ -26,7 +26,15 @@ class CoursService {
         
         return $result;
     }
+    public function getAllEnseignants() {
+        $query = "SELECT ide, nom FROM enseignant";
+        return $this->con->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
     
+    public function getSallesLibres() {
+        $query = "SELECT ids, nom FROM salle WHERE etat = 'libre'";
+        return $this->con->query($query)->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function edit($idc, $niveau, $idens, $idsall, $mat, $horaire, $duree) {
         $requete = "UPDATE cours SET niveau = :nv, idens = :idens, idsall = :idsall, mat = :mat, horaire = :hr, duree = :dur WHERE idc = :id";
         $statement = $this->con->prepare($requete);

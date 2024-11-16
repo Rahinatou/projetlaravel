@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 12 nov. 2024 à 22:19
+-- Généré le : sam. 16 nov. 2024 à 20:14
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.1.0
 
@@ -31,8 +31,8 @@ DROP TABLE IF EXISTS `cours`;
 CREATE TABLE IF NOT EXISTS `cours` (
   `idc` int(11) NOT NULL AUTO_INCREMENT,
   `niveau` varchar(20) NOT NULL,
-  `idens` int(11) DEFAULT NULL,
-  `idsall` int(11) DEFAULT NULL,
+  `idens` varchar(30) NOT NULL,
+  `idsall` varchar(30) NOT NULL,
   `mat` varchar(10) NOT NULL,
   `horaire` date NOT NULL,
   `duree` int(11) DEFAULT NULL,
@@ -40,14 +40,14 @@ CREATE TABLE IF NOT EXISTS `cours` (
   KEY `idens` (`idens`),
   KEY `idsall` (`idsall`),
   KEY `mat` (`mat`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `cours`
 --
 
 INSERT INTO `cours` (`idc`, `niveau`, `idens`, `idsall`, `mat`, `horaire`, `duree`) VALUES
-(1, 'Bachelor 2', 1, 1, 'Python', '2025-05-12', 3);
+(2, 'Bachelor3', '3', '4', 'PQL', '2024-11-17', 3);
 
 -- --------------------------------------------------------
 
@@ -116,13 +116,14 @@ CREATE TABLE IF NOT EXISTS `salle` (
   `etat` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`ids`),
   UNIQUE KEY `nom` (`nom`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `salle`
 --
 
 INSERT INTO `salle` (`ids`, `nom`, `capacite`, `emplacement`, `etat`) VALUES
+(4, 'Salle3', 50, 'FST', 'libre'),
 (2, 'LAB2', 50, 'ADM', 'occupÃ©e');
 
 -- --------------------------------------------------------
