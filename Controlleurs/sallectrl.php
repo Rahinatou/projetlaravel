@@ -33,6 +33,12 @@ if ($action == 'ajout') {
         } 
 }
 
+if ($action == 'editForm') {
+    $ids = $_GET['ids'];
+    header('Location: ../vues/salle/edit.php?ids=' . $ids);
+    exit;
+    }
+
 if ($action == "modifier") {
     if (isset($_POST['ids'], $_POST['nom'], $_POST['capacite'], $_POST['emplacement'], $_POST['etat'])) {
         $ids = $_POST['ids'];

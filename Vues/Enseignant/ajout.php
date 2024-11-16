@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: white; /* Fond gris clair */
+            background: linear-gradient(135deg, #0f6c94, #3eb1c8); /* Dégradé de fond */
             margin: 0;
             padding: 0;
             display: flex;

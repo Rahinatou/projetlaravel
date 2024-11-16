@@ -60,7 +60,7 @@ class SalleService {
         $statement = $this->con->prepare($requete);
         $statement->execute([
             'id' => $ids]);
-        $salle = $statement->fetch(PDO::FETCH_ASSOC);
+        $salle = $statement->fetchALL(PDO::FETCH_ASSOC);
         return $salle[0];
     }
 }

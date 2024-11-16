@@ -114,17 +114,23 @@
     </style>
 </head>
 <body>
+<?php
+    $ide = $_GET['ide'];
+    require_once('../../Modeles/enseignantservice.php');
+    $ensService= new EnseignantService();
+    $enseignant= $ensService->getById($ide);
+    ?>
     <div class="form-container">
         <h1>Modification d'enseignant</h1>
         <form action="../../Controlleurs/EnseignantControl.php" method="post">
             <table>
                 <tr>
                     <td>Identifiant :</td>
-                    <td><input type="text" name="ide" autocomplete="off" required></td>
+                    <td><input type="text" name="ide" value="<?php echo $etudiant['ide']; ?>" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td>Nom :</td>
-                    <td><input type="text" name="nom" autocomplete="off" required></td>
+                    <td><input type="text" name="nom" value="<?php echo $etudiant['nom']; ?>" autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <td>Téléphone :</td>
@@ -154,7 +160,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Email :</td>
+                    <td>E_mail :</td>
                     <td><input type="email" name="email" required></td>
                 </tr>
                 <tr>

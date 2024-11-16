@@ -82,6 +82,21 @@
             font-weight: bold;
             text-decoration: none;
                   }
+        .mo{
+             color: rgb(15, 108, 148);          
+             font-weight: bold;
+        }
+       .ret{
+            padding: 10px;
+             border: none;
+             color: whitesmoke;
+             border-radius: 10px;
+             background-color:  rgb(15, 108, 148);
+             font-weight: bold;
+             margin: 150px 0;
+             position: relative;
+            left: -300px;
+             }
 
     </style>
 </head>
@@ -118,14 +133,14 @@
             <td><?php echo $c['horaire']; ?></td>
             <td><?php echo $c['duree']; ?></td>
             <td>
-                <input form="f1" type="submit" value="Modifier" />
+            <a href="../../Controlleurs/coursctrl.php?action=editForm&idc=<?php echo $c['idc']; ?>" class="mo"> Modifier</a>
                 <a href="../../Controlleurs/CoursCtrl.php?action=delete&idc=<?php echo $c['idc']; ?>" 
                    onclick="return window.confirm('Etes-vous sûr de vouloir supprimer ce cours ?')">Supprimer</a>
             </td>
         </tr>
     <?php } ?>
     </table>
-    <form action="edit.php" method="post" id="f1"></form>
+    <a href="../../dashboard.php" class="ret">Retour au menu</a>
 
 </body>
 </html>

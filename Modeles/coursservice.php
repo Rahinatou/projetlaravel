@@ -66,7 +66,7 @@ class CoursService {
         $statement = $this->con->prepare($requete);
         $statement->execute([
             'id' => $idc]);
-        $cours = $statement->fetch(PDO::FETCH_ASSOC);
+        $cours = $statement->fetchALL(PDO::FETCH_ASSOC);
         return $cours[0];
     }
 }

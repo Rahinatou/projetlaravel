@@ -7,140 +7,168 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: white; /* Fond gris clair */
-            margin: 0;
-            padding: 0;
+            background: linear-gradient(135deg, #0f6c94, #3eb1c8); /* Dégradé de fond */
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            color: black;
+            height: 100vh;
+            margin: 0;
+            color: #333;
         }
 
-        /* Lien pour la liste des cours */
-        .link-container {
-            
-            text-align: right;
-            padding: 10px;
-            background-color: rgb(15, 108, 148);
-        }
-
-        .link-container a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        /* Conteneur principal */
+        .form-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Ombre douce */
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-sizing: border-box;
         }
 
         /* Titre centré */
-        h1 {
-            color: rgb(15, 108, 148); /* Bleu foncé */
-            font-size: 24px;
-            margin-top: 20px;
+        .form-container h1 {
+            text-align: center;
+            color: #0f6c94;
+            margin-bottom: 30px;
+            font-size: 26px;
+            font-weight: bold;
         }
 
-        /* Conteneur du formulaire avec bordure */
-        .form-container {
-            background-color: white; /* Fond blanc */
-            border: 2px solid rgb(15, 108, 148); /* Bordure bleue foncée */
-            border-radius: 20px;
-            padding: 20px;
-            width: 80%;
-            max-width: 500px;
-            margin-top: 20px;
-        }
-
-        /* Tableau et styles du formulaire */
+        /* Tableau et champs */
         table {
             width: 100%;
             border-collapse: collapse;
         }
 
         td {
-            padding: 10px;
-            font-size: 16px;
+            padding: 10px 0;
+            vertical-align: middle;
+        }
+
+        td:first-child {
+            text-align: right;
             font-weight: bold;
+            color: #555;
+            padding-right: 15px;
+            white-space: nowrap;
         }
 
         input[type="text"],
         input[type="number"],
-        input[type="datetime-local"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid rgb(180, 176, 176); /* Bordure gris clair */
+        select {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            background-color: rgb(180, 176, 176);
-            color: black;
-            font-weight: normal;
+            font-size: 14px;
+            transition: all 0.3s;
+            background-color: #f9f9f9;
         }
 
-        /* Boutons d'action */
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #0f6c94;
+            background-color: #e6f7ff;
+            outline: none;
+        }
+
+        /* Boutons */
         input[type="submit"],
         input[type="reset"] {
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         input[type="reset"] {
-            background-color: rgb(180, 176, 176);
-            color: black;
-        }
-
-        input[type="submit"] {
-            background-color: rgb(15, 108, 148);
+            background-color: rgb(180, 176, 176); /* Rouge */
             color: white;
         }
 
-        input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            opacity: 0.8;
+        input[type="submit"] {
+            background-color: #0f6c94; /* Bleu */
+            color: white;
         }
-        .lien{
-            color:  rgb(15, 108, 148);
-            font-weight: bold;
+
+        input[type="submit"]:hover {
+            background-color: #0d8aad;
+            transform: scale(1.05); /* Agrandissement au survol */
+        }
+
+        input[type="reset"]:hover {
+            background-color: #e63939;
+            transform: scale(1.05);
+        }
+
+        /* Lien retour */
+        .form-container a {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0f6c94;
             text-decoration: none;
-                  }
+            font-weight: bold;
+        }
+
+        .form-container a:hover {
+            text-decoration: underline;
+            color: #0d8aad;
+        }
+
+        /* Media query pour les petits écrans */
+        @media (max-width: 768px) {
+            td:first-child {
+                text-align: left;
+                padding-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <a href="../../Controlleurs/SalleCtrl.php?action=liste" class="lien">Liste des salles</a><br>
-    <h1>Formulaire d'ajout d'une salle</h1>
-    <form action="../../Controlleurs/SalleCtrl.php" method="post">
-        <table align="center">
-            <tr>
-                <td>Nom de la salle</td>
-                <td><input type="text" name="nom" autocomplete="off" required></td>
-            </tr>
-            <tr>
-                <td>Capacité</td>
-                <td><input type="number" name="capacite" required></td>
-            </tr>
-            <tr>
-                <td>Emplacement</td>
-                <td><input type="text" name="emplacement" required></td>
-            </tr>
-            <tr>
-                <td>État de la salle</td>
-                <td>
-                    <select name="etat">
-                        <option value="">Veuillez choisir l'état de la salle</option>
-                        <option value="occupée">Occupée</option>
-                        <option value="libre">Libre</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <input type="hidden" name="action" value="ajout">
-                <td colspan="2" style="text-align: center">
-                    <input type="reset" style="background-color: red; color: white" value="VIDER">
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <input type="submit" style="background-color: green; color: white" value="AJOUTER">
-                </td>
-            </tr>
-        </table>
-    </form>
+    <div class="form-container">
+        <a href="../../Controlleurs/SalleCtrl.php?action=liste" class="lien">Liste des salles</a>
+        <h1>Formulaire d'ajout d'une salle</h1>
+        <form action="../../Controlleurs/SalleCtrl.php" method="post">
+            <table>
+                <tr>
+                    <td>Nom de la salle</td>
+                    <td><input type="text" name="nom" autocomplete="off" required></td>
+                </tr>
+                <tr>
+                    <td>Capacité</td>
+                    <td><input type="number" name="capacite" required></td>
+                </tr>
+                <tr>
+                    <td>Emplacement</td>
+                    <td><input type="text" name="emplacement" required></td>
+                </tr>
+                <tr>
+                    <td>État de la salle</td>
+                    <td>
+                        <select name="etat" required>
+                            <option value="">Veuillez choisir l'état de la salle</option>
+                            <option value="occupée">Occupée</option>
+                            <option value="libre">Libre</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <input type="hidden" name="action" value="ajout">
+                    <td colspan="2" style="text-align: center">
+                        <input type="reset" value="VIDER">
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="submit" value="AJOUTER">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>

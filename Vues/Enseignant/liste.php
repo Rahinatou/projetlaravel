@@ -82,6 +82,21 @@
             font-weight: bold;
             text-decoration: none;
                   }
+         .mo{
+             color: rgb(15, 108, 148);          
+             font-weight: bold;
+        }
+        .ret{
+            padding: 10px;
+             border: none;
+             color: whitesmoke;
+             border-radius: 10px;
+             background-color:  rgb(15, 108, 148);
+             font-weight: bold;
+             margin: 150px 0;
+             position: relative;
+            left: -300px;
+             }
 
     </style>
 </head>
@@ -120,7 +135,7 @@
                 <td><?php echo $ens['adresse']; ?></td>
                 <td><?php echo $ens['departement']; ?></td>
                 <td>
-                <a href="../../Controlleurs/enseignantctrl.php?action=editForm&ide=<?php echo $ens['ide']; ?>"> Modifier</a>
+                <a href="../../Controlleurs/enseignantctrl.php?action=editForm&ide=<?php echo $ens['ide']; ?>" class="mo"> Modifier</a>
                     <a href="../../Controlleurs/EnseignantCtrl.php?action=delete&ide=<?php echo $ens['ide']; ?>" 
                        onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')"> Supprimer</a>
                 </td>
@@ -129,6 +144,7 @@
         } 
         ?>
     </table>
-    
+        
+    <a href="../../dashboard.php" class="ret">Retour au menu</a>
 </body>
 </html>

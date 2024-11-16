@@ -38,10 +38,10 @@ if ($action == 'ajout') {
 else 
     echo "Erreur lors de l'ajout de l'enseignant. Veuillez réessayer.";
 
-    if ($action == 'editForm') {
-        $ide = $_GET['ide'];
-        header('Location: ../vues/Enseignant/edit.php?ide=' . $ide);
-        exit;
+if ($action == 'editForm') {
+    $ide = $_GET['ide'];
+    header('Location: ../vues/Enseignant/edit.php?ide=' . $ide);
+    exit;
     }
 
 if ($action == "modifier") {

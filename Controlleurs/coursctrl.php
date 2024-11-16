@@ -37,7 +37,11 @@ if ($action == 'ajout') {
         }
         }  
 
-
+        if ($action == 'editForm') {
+            $id = $_GET['idc'];
+            header('Location: ../vues/cours/edit.php?idc=' . $id);
+            exit;
+            }
 
 if ($action == "modifier") {
     if (isset($_POST['idc'], $_POST['niveau'], $_POST['idens'], $_POST['idsall'], $_POST['mat'], $_POST['horaire'], $_POST['duree'])) {

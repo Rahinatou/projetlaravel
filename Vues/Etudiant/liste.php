@@ -55,20 +55,7 @@
             color: black;
         }
 
-        /* Boutons dans les cellules */
-        input {
-            background-color: rgb(15, 108, 148);
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .action-input:hover {
+           .action-input:hover {
             background-color: rgb(10, 90, 125);
         }
 
@@ -76,12 +63,27 @@
             color: red;
             font-weight: bold;
             text-decoration: none;
-                   }
+        }
         .lien{
             color:  rgb(15, 108, 148);
             font-weight: bold;
             text-decoration: none;
                   }
+        .mo{
+             color: rgb(15, 108, 148);          
+             font-weight: bold;
+        }
+        .ret{
+            padding: 10px;
+             border: none;
+             color: whitesmoke;
+             border-radius: 10px;
+             background-color:  rgb(15, 108, 148);
+             font-weight: bold;
+             margin: 150px 0;
+             position: relative;
+            left: -300px;
+             }
 
     </style>
 </head>
@@ -117,14 +119,14 @@
             <td><?php echo $et['tel']; ?></td>
             <td><?php echo $et['datenaiss']; ?></td>
             <td>
-                    <input form="f1" type="submit" value="Modifier" />
+            <a href="../../Controlleurs/Etudiantcontrol.php?action=editForm&matricule=<?php echo $et['matricule']; ?>" class="mo"> Modifier</a>
                 <a href="../../Controlleurs/Etudiantcontrol.php?action=delete&matricule=<?php echo $et['matricule']; ?>" 
-                   onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')">Supprimer</a>
+                   onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')" class="sup">Supprimer</a>
             </td>
         </tr>
     <?php } ?>
     </table>
-    <form action="edit.php" method="post" id="f1"></form>
 
-</body>
+    <a href="../../dashboard.php" class="ret">Retour au menu</a>
+  </body>
 </html>

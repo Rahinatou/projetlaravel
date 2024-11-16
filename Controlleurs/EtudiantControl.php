@@ -46,6 +46,11 @@ if ($action == 'ajout') {
     //    echo "Erreur : informations de l'étudiant incomplètes. Vérifiez que tous les champs sont remplis.";
     }
 }
+if ($action == 'editForm') {
+    $mat = $_GET['matricule'];
+    header('Location: ../vues/Etudiant/edit.php?matricule=' . $mat);
+    exit;
+    }
 if ($action == "modifier") {
           // Logique pour la modification
         // Appeler la fonction de mise à jour (update) ou rediriger vers la page de modification

@@ -82,7 +82,21 @@
             font-weight: bold;
             text-decoration: none;
                   }
-
+        .mo{
+             color: rgb(15, 108, 148);          
+             font-weight: bold;
+        }
+        .ret{
+            padding: 10px;
+             border: none;
+             color: whitesmoke;
+             border-radius: 10px;
+             background-color:  rgb(15, 108, 148);
+             font-weight: bold;
+             margin: 150px 0;
+             position: relative;
+            left: -300px;
+             }
     </style>
 </head>
 <body>
@@ -116,14 +130,14 @@
             <td><?php echo $s['emplacement']; ?></td>
             <td><?php echo $s['etat']; ?></td>
             <td>
-                <input form="f2" type="submit" value="Modifier" />
+            <a href="../../Controlleurs/sallectrl.php?action=editForm&ids=<?php echo $s['ids']; ?>" class="mo"> Modifier</a>
                 <a href="../../Controlleurs/sallectrl.php?action=delete&ids=<?php echo $s['ids']; ?>" 
                    onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cette salle ?')">Supprimer</a>
             </td>
         </tr>
     <?php } ?>
     </table>
-    <form action="edit.php" method="post" id="f2"></form>
 
+    <a href="../../dashboard.php" class="ret">Retour au menu</a>
 </body>
 </html>

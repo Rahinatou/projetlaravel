@@ -10,8 +10,7 @@ class Connexion{
         try {
             $con = new PDO("mysql:host=$this->host;dbname=$this->dbname",$this->user, $this->password);
         if($con){
-            echo "Connecting to batabase";
-            return $con;
+             return $con;
             }
         else
         {
