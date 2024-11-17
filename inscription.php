@@ -9,7 +9,7 @@
         form {
     border-collapse: collapse;
     width: 30%;
-    border: 3px solid whitesmoke;
+   ;
     padding: 50px;
     margin: 50px auto;
     top: 25px;
@@ -35,7 +35,7 @@ h2 {
 }
 
 #register {
-    border: 3px solid black;
+    border: 3px solid white;
     cursor: pointer;
     padding: 10px;
     margin-left: 15px;
@@ -49,7 +49,8 @@ h2 {
 }
 
 #register:hover {
-    background-color: #3eb1c8; /* Couleur de fond lors du survol */
+    background-color: white; /* Couleur de fond lors du survol */
+    color: #0f6c94;
 }
 
 a {
