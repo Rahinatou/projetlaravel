@@ -102,7 +102,7 @@
 </head>
 <body>
     <h1>Liste des cours</h1>
-    <a href="../../Controlleurs/CoursCtrl.php?action=form" class="lien">Ajouter un cours</a>
+    <a href="../../Controlleurs/coursctrl.php?action=form" class="lien">Ajouter un cours</a>
    
     <?php 
         if(isset($_GET['message'])){
@@ -112,7 +112,7 @@
     ?>
 
     <?php
-    require_once('../../modeles/CoursService.php');
+    require_once('../../Modeles/coursservice.php');
     $coursService = new CoursService();
     $cours = $coursService->liste();
     ?>    
@@ -134,7 +134,7 @@
             <td><?php echo $c['duree']; ?></td>
             <td>
             <a href="../../Controlleurs/coursctrl.php?action=editForm&idc=<?php echo $c['idc']; ?>" class="mo"> Modifier</a>
-                <a href="../../Controlleurs/CoursCtrl.php?action=delete&idc=<?php echo $c['idc']; ?>" 
+                <a href="../../Controlleurs/coursctrl.php?action=delete&idc=<?php echo $c['idc']; ?>" 
                    onclick="return window.confirm('Etes-vous sûr de vouloir supprimer ce cours ?')">Supprimer</a>
             </td>
         </tr>

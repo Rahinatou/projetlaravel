@@ -99,7 +99,7 @@
     ?>
 
     <?php
-    require_once('../../modeles/EtudiantService.php');
+    require_once('../../Modeles/EtudiantService.php');
     $etService = new EtudiantService();
     $etudiants = $etService->liste();
     ?>    
@@ -119,8 +119,8 @@
             <td><?php echo $et['tel']; ?></td>
             <td><?php echo $et['datenaiss']; ?></td>
             <td>
-            <a href="../../Controlleurs/Etudiantcontrol.php?action=editForm&matricule=<?php echo $et['matricule']; ?>" class="mo"> Modifier</a>
-                <a href="../../Controlleurs/Etudiantcontrol.php?action=delete&matricule=<?php echo $et['matricule']; ?>" 
+            <a href="../../Controlleurs/EtudiantControl.php?action=editForm&matricule=<?php echo $et['matricule']; ?>" class="mo"> Modifier</a>
+                <a href="../../Controlleurs/EtudiantControl.php?action=delete&matricule=<?php echo $et['matricule']; ?>" 
                    onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')" class="sup">Supprimer</a>
             </td>
         </tr>

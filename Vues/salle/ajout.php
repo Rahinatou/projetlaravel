@@ -25,6 +25,7 @@
             width: 90%;
             max-width: 500px;
             box-sizing: border-box;
+            
         }
 
         /* Titre centré */
@@ -133,9 +134,9 @@
 </head>
 <body>
     <div class="form-container">
-        <a href="../../Controlleurs/SalleCtrl.php?action=liste" class="lien">Liste des salles</a>
+        <a href="../../Controlleurs/sallectrl.php?action=liste" class="lien">Liste des salles</a>
         <h1>Formulaire d'ajout d'une salle</h1>
-        <form action="../../Controlleurs/SalleCtrl.php" method="post">
+        <form action="../../Controlleurs/sallectrl.php" method="post">
             <table>
                 <tr>
                     <td>Nom de la salle</td>

@@ -122,10 +122,10 @@ select:focus {
     $enseignant = $courservice->getAllEnseignants();
     $salle = $courservice->getSallesLibres();
     ?>
-    <a href="../../Controlleurs/CoursCtrl.php?action=liste" class="lien">Liste des cours</a><br>
+    <a href="../../Controlleurs/coursctrl.php?action=liste" class="lien">Liste des cours</a><br>
     <h1>Formulaire d'ajout d'un cours</h1>
     <div class="form-container">
-        <form action="../../Controlleurs/CoursCtrl.php" method="post">
+        <form action="../../Controlleurs/coursctrl.php" method="post">
             <table style="margin: 0 auto;">
                 <tr>
                     <td>Niveau</td>

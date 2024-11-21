@@ -66,11 +66,11 @@
             <i class="fas fa-chalkboard-teacher"></i>
             Menu Enseignant
         </a>
-        <a href="Vues/Salle/liste.php" class="menu-item">
+        <a href="Vues/salle/liste.php" class="menu-item">
             <i class="fas fa-door-open"></i>
             Menu Salle
         </a>
-        <a href="Vues/Cours/liste.php" class="menu-item">
+        <a href="Vues/cours/liste.php" class="menu-item">
             <i class="fas fa-book"></i>
             Menu Cours
         </a>

@@ -1,5 +1,5 @@
 <?php
-require_once('../Modeles/EnseignantService.php');
+require_once('../Modeles/enseignantservice.php');
 $ensService = new EnseignantService();
 
 $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : '');

@@ -102,7 +102,7 @@
 </head>
 <body>
     <h1>Liste des enseignants</h1>
-    <a href="../../Controlleurs/enseignantCtrl.php?action=form" class="lien">Ajouter un enseignant</a>
+    <a href="../../Controlleurs/enseignantctrl.php?action=form" class="lien">Ajouter un enseignant</a>
    
     <?php 
         if (isset($_GET['message'])) {
@@ -113,7 +113,7 @@
     ?>
 
     <?php
-    require_once('../../modeles/EnseignantService.php');
+    require_once('../../modeles/enseignantservice.php');
     $ensService = new EnseignantService();
     $enseignants = $ensService->liste();
     ?>    
@@ -136,7 +136,7 @@
                 <td><?php echo $ens['departement']; ?></td>
                 <td>
                 <a href="../../Controlleurs/enseignantctrl.php?action=editForm&ide=<?php echo $ens['ide']; ?>" class="mo"> Modifier</a>
-                    <a href="../../Controlleurs/EnseignantCtrl.php?action=delete&ide=<?php echo $ens['ide']; ?>" 
+                    <a href="../../Controlleurs/enseignantctrl.php?action=delete&ide=<?php echo $ens['ide']; ?>" 
                        onclick="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')"> Supprimer</a>
                 </td>
             </tr>

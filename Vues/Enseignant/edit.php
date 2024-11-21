@@ -122,7 +122,7 @@
     ?>
     <div class="form-container">
         <h1>Modification d'enseignant</h1>
-        <form action="../../Controlleurs/EnseignantControl.php" method="post">
+        <form action="../../Controlleurs/enseignantctrl.php" method="post">
             <table>
                 <tr>
                     <td>Identifiant :</td>

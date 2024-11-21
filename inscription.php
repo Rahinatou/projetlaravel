@@ -9,7 +9,6 @@
         form {
     border-collapse: collapse;
     width: 30%;
-   ;
     padding: 50px;
     margin: 50px auto;
     top: 25px;

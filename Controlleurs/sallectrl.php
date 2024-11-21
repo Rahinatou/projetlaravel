@@ -1,15 +1,15 @@
 <?php
-require_once('../Modeles/SalleService.php');
+require_once('../Modeles/salleservice.php');
 $salleService = new SalleService();
 
 $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : '');
 
 if ($action == 'form') {
-    header("Location: ../Vues/Salle/ajout.php");
+    header("Location: ../Vues/salle/ajout.php");
 }
 
 if ($action == 'liste') {
-    header("Location: ../Vues/Salle/liste.php");
+    header("Location: ../Vues/salle/liste.php");
 }
 
 if ($action == 'delete') {
@@ -28,7 +28,7 @@ if ($action == 'ajout') {
         $etat = $_POST['etat'];
 
         $salleService->add($nom, $capacite, $emplacement, $etat);
-            header("Location: ../Vues/Salle/liste.php?message=Salle ajoutée");
+            header("Location: ../Vues/salle/liste.php?message=Salle ajoutée");
             exit();
         } 
 }

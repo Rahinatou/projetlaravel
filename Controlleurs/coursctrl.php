@@ -1,5 +1,5 @@
 <?php
-require_once('../Modeles/Coursservice.php');
+require_once('../Modeles/coursservice.php');
 $coursService = new CoursService();
 
 $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : '');
@@ -7,11 +7,11 @@ $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? 
 if ($action == 'form') {
     $enseignants = $coursService->getAllEnseignants();
     $salles = $coursService->getSallesLibres();
-    header("Location: ../Vues/Cours/ajout.php");
+    header("Location: ../Vues/cours/ajout.php");
 }
 
 if ($action == 'liste') {
-    header("Location: ../Vues/Cours/liste.php");
+    header("Location: ../Vues/cours/liste.php");
 }
 
 if ($action == 'delete') {
@@ -19,7 +19,7 @@ if ($action == 'delete') {
 
     $coursService->delete($idc);
 
-    header("Location: ../Vues/Cours/liste.php?message=Cours supprimé");
+    header("Location: ../Vues/cours/liste.php?message=Cours supprimé");
 }
 
 if ($action == 'ajout') {
@@ -32,7 +32,7 @@ if ($action == 'ajout') {
         $duree = $_POST['duree'];
 
              $coursService->add($niveau, $idens, $idsall, $mat, $horaire, $duree) ;
-            header("Location: ../Vues/Cours/liste.php?message=Cours ajouté");
+            header("Location: ../Vues/cours/liste.php?message=Cours ajouté");
             exit();
         }   else {
             echo "Erreur lors de l'ajout du cours. Veuillez réessayer.";
@@ -58,7 +58,7 @@ if ($action == "modifier") {
         $duree = $_POST['duree'];
 
         $coursService->edit($idc, $niveau, $idens, $idsall, $mat, $horaire, $duree) ;
-            header("Location: ../Vues/Cours/liste.php?message=Cours modifié");
+            header("Location: ../Vues/cours/liste.php?message=Cours modifié");
             exit;
         } 
         }

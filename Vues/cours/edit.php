@@ -138,7 +138,7 @@
 
     <div class="form-container">
         <h1>Formulaire de modification de cours</h1>
-        <form action="../../Controlleurs/Coursctrl.php" method="post">
+        <form action="../../Controlleurs/coursctrl.php" method="post">
             <table>
                 <tr>
                     <td>Identifiant</td>

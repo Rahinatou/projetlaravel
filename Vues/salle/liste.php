@@ -111,7 +111,7 @@
     ?>
 
     <?php
-    require_once('../../modeles/salleservice.php');
+    require_once('../../Modeles/salleservice.php');
     $salleService = new SalleService();
     $salles = $salleService->liste();
     ?>    
